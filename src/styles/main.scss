@@ -1,0 +1,87 @@
+@import '_normalize';
+@import '_variables';
+@import '_mixins';
+@import '_adjustments';
+@import '_animations';
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700&subset=latin,cyrillic-ext);
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.first-section{
+    @include section($white);
+    
+    &__header{
+        @include header($blue);
+        @include align-vertically();
+        display: none;
+
+        &.animate-fadeInUp{
+            display: block;
+        }
+    }
+}
+
+.second-section{
+    @include section($blue);
+    @include clearfix();
+    white-space: nowrap;
+    
+
+    &__text-wrap{
+        position: relative;
+        white-space: normal;
+        float: left;    
+        width: 50%;
+        height: 100%;
+    }
+
+    &__text{
+        @include align-vertically();
+        display: block;
+        font-weight: 400;
+        margin: 0;
+    }
+    
+    &__image-wrap{
+        float: right;    
+        width: 50%;
+        height: 100%;
+    }
+
+    &__image{
+        @include align-vertically();
+        width: auto;
+        height: 50%;
+    }
+    
+
+}
+
+.third-section{
+    @include section($white);
+
+    &__header{
+        @include header($blue);
+        @include align-vertically();
+    }
+}
+
+
+.foot{
+    background-color: $blue;
+    text-align: center;
+    line-height: $footer-height;
+
+    &__text{
+        font-size: .8em;
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal; 
+        font-weight: 100;
+    }
+}
+
+
+@import '_media';
